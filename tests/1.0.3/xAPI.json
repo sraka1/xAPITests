@@ -1,0 +1,389 @@
+{
+	"id": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+	"name": "xAPI",
+	"description": "",
+	"order": [
+		"410706cc-c58c-2c06-c4ed-77f2ec29d09d",
+		"bcccf8b8-6300-ce6d-9c12-348660849f2b",
+		"c874f27f-23b7-a559-6c11-42cb52f5b5a6",
+		"18258284-335c-5d70-d441-13a2f601ffd4",
+		"a01c9ff9-ff0a-7e4e-dfae-d383f1d3d4da",
+		"d26eb8a8-8214-8f65-5f2f-e7a5c115f4c0",
+		"aaed7336-743a-ec9e-ffdd-a00ee06808b8",
+		"8826164d-c88b-33dc-a7b4-559c9f2b3e07",
+		"54335a79-0d28-b014-2436-83a5b8dcbabf",
+		"044fb989-300d-66a1-2c66-14100b171367",
+		"df9e8d39-8203-d624-ff3c-4eb17c469fba",
+		"d7a4ba6f-b105-a170-2ed3-fd144379599e",
+		"28c5a908-dca7-a842-9510-9b2a510ed2b4",
+		"9dfce8a7-cd38-be11-89c3-b814b67e10c8"
+	],
+	"folders": [],
+	"timestamp": 0,
+	"owner": "3507",
+	"remoteLink": "https://www.getpostman.com/collections/c41351e3ad9424ed4828",
+	"public": false,
+	"requests": [
+		{
+			"id": "044fb989-300d-66a1-2c66-14100b171367",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nOrigin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.1\nAccept: */*\nConnection: keep-alive\nDNT: 1\nIf-Match: eafd0cef3c389798d2a19c77b0ce561544859189\n",
+			"url": "{{endpoint}}/agents/profile?agent={\"objectType\":\"Agent\",\"name\":\"Buster Keaton\",\"mbox\":\"mailto:buster@keaton.com\"}&profileId={{randomProfileId}}",
+			"preRequestScript": "function uuid() {\n  function s4() {\n    return Math.floor((1 + Math.random()) * 0x10000)\n      .toString(16)\n      .substring(1);\n  }\n  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +\n    s4() + '-' + s4() + s4() + s4();\n}\n\npostman.setEnvironmentVariable(\"randomProfileId\", uuid());",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 204\"] = responseCode.code === 204;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033357375,
+			"name": "Agent profile",
+			"description": "POST 10 statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+			"rawModeData": "{\"agent\":{\"objectType\":\"Agent\",\"name\":\"Buster Keaton\",\"mbox\":\"mailto:buster@keaton.com\"},\"verb\":{\"id\":\"http://adlnet.gov/expapi/verbs/voided\",\"display\":{\"en-US\":\"voided\"}},\"object\":{\"objectType\":\"StatementRef\",\"id\":\"d47a5ebc-b95c-468d-a2a4-1adb28fb1a40\"}}"
+		},
+		{
+			"id": "18258284-335c-5d70-d441-13a2f601ffd4",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nOrigin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.2\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
+			"url": "{{endpoint}}/statements?statementId={{statementId}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033325778,
+			"name": "Single statement",
+			"description": "GET single statement",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67"
+		},
+		{
+			"id": "28c5a908-dca7-a842-9510-9b2a510ed2b4",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nOrigin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.3\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
+			"url": "{{endpoint}}/auth/tokens",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033575218,
+			"name": "Access token temporary",
+			"description": "POST 10 statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+			"rawModeData": "{\"user\": {\"email\": \"jakob.murko@gmail.com\"}}"
+		},
+		{
+			"id": "410706cc-c58c-2c06-c4ed-77f2ec29d09d",
+			"headers": "Origin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.1\nAccept: */*\nConnection: keep-alive\nDNT: 1\nAuthorization: Basic dGVzdDp0ZXN0\n",
+			"url": "{{endpoint}}/statements",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\n\nvar counter = 0;\nvar data = JSON.parse(responseBody);\nvar pattern = new RegExp(\"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$\");\ndata.forEach(function(uuid) {\n   var result = pattern.test(uuid);\n   if (result) {\n       counter++;\n   }\n   postman.setEnvironmentVariable(\"statementId\", uuid);\n});\n\ntests[\"Body contains 10 UUID's\"] = counter === 10;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033231044,
+			"name": "Statements",
+			"description": "POST 10 statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+			"rawModeData": "[{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Harpo Marx\",\"mbox\":\"mailto:harpo@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #0\"}},{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Groucho Marx\",\"mbox\":\"mailto:groucho@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #1\"}},{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Harpo Marx\",\"mbox\":\"mailto:harpo@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #2\"}},{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Groucho Marx\",\"mbox\":\"mailto:groucho@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #3\"}},{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Harpo Marx\",\"mbox\":\"mailto:harpo@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #4\"}},{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Groucho Marx\",\"mbox\":\"mailto:groucho@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #5\"}},{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Harpo Marx\",\"mbox\":\"mailto:harpo@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #6\"}},{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Groucho Marx\",\"mbox\":\"mailto:groucho@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #7\"}},{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Harpo Marx\",\"mbox\":\"mailto:harpo@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #8\"}},{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Groucho Marx\",\"mbox\":\"mailto:groucho@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #9\"}}]"
+		},
+		{
+			"id": "54335a79-0d28-b014-2436-83a5b8dcbabf",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nOrigin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.1\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
+			"url": "{{endpoint}}/statements?method=PUT",
+			"preRequestScript": "function uuid() {\n  function s4() {\n    return Math.floor((1 + Math.random()) * 0x10000)\n      .toString(16)\n      .substring(1);\n  }\n  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +\n    s4() + '-' + s4() + s4() + s4();\n}\n\npostman.setEnvironmentVariable(\"randomStatementId\", uuid());",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 204\"] = responseCode.code === 204;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033352005,
+			"name": "CORS",
+			"description": "POST 10 statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+			"rawModeData": "statementId={{randomStatementId}}&content={\"actor\":{\"objectType\":\"Agent\",\"name\":\"Harpo Marx\",\"mbox\":\"mailto:harpo@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #0\"}}&registration=&Content-Type=application/json&Authorization=Basic dG9tOjEyMzQ="
+		},
+		{
+			"id": "8826164d-c88b-33dc-a7b4-559c9f2b3e07",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nOrigin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.2\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
+			"url": "{{endpoint}}/statements?voidedStatementId={{statementId}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033345281,
+			"name": "Single voided statement",
+			"description": "GET single statement",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67"
+		},
+		{
+			"id": "9dfce8a7-cd38-be11-89c3-b814b67e10c8",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nX-Experience-API-Version: 1.0.3\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
+			"url": "{{endpoint}}/oauth/token",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "code",
+					"value": "puPQ26QXZwmSOFluZ0IcAW0DWH4v5hzfIFymru4C",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "ipL2RbiUOBTaLdzcje22S0kJHFG3n6XiOE10ynIt",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "e1f8Q9Cl5mMZ48sQUIkzeXpjC6OCmmYOUUhiBuiT",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "redirect_uri",
+					"value": "http://devel.bo/XAT-Admin/oAuth.php",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "authorization_code",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033377006,
+			"name": "Access token OAuth",
+			"description": "POST 10 statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67"
+		},
+		{
+			"id": "a01c9ff9-ff0a-7e4e-dfae-d383f1d3d4da",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nOrigin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.2\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
+			"url": "{{endpoint}}/attachments?sha2=dd230a0934684047ed4e5f7b0d47e2167c1aa8ff371a6e31a945db9fe0c5ba39",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033330935,
+			"name": "Fetch attachment",
+			"description": "GET single attachment",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67"
+		},
+		{
+			"id": "aaed7336-743a-ec9e-ffdd-a00ee06808b8",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nOrigin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.1\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
+			"url": "{{endpoint}}/statements",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033340559,
+			"name": "Voiding a statement",
+			"description": "POST 10 statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+			"rawModeData": "{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Buster Keaton\",\"mbox\":\"mailto:buster@keaton.com\"},\"verb\":{\"id\":\"http://adlnet.gov/expapi/verbs/voided\",\"display\":{\"en-US\":\"voided\"}},\"object\":{\"objectType\":\"StatementRef\",\"id\":\"{{statementId}}\"}}"
+		},
+		{
+			"id": "bcccf8b8-6300-ce6d-9c12-348660849f2b",
+			"headers": "Origin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.2\nAccept: */*\nConnection: keep-alive\nDNT: 1\nAuthorization: Basic dGVzdDp0ZXN0\n",
+			"url": "{{endpoint}}/statements",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033314770,
+			"name": "Statements",
+			"description": "GET statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67"
+		},
+		{
+			"id": "c874f27f-23b7-a559-6c11-42cb52f5b5a6",
+			"headers": "Origin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nX-Experience-API-Version: 1.0.1\nAccept: */*\nConnection: keep-alive\nDNT: 1\nContent-Type: multipart/mixed; boundary=7da24f2e50046\nAuthorization: Basic dGVzdDp0ZXN0\n",
+			"url": "{{endpoint}}/statements",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033320288,
+			"name": "Multipart statements",
+			"description": "POST 10 statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+			"rawModeData": "--7da24f2e50046\nContent-Type:application/json\n\n{\"actor\":{\"objectType\":\"Agent\",\"mbox\":\"mailto:steve.vergenz.ctr@adlnet.gov\"},\"verb\":{\"id\":\"http://adlnet.gov/expapi/verbs/launched\"},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://vwf.adlnet.gov/xapi/virtual_world_sandbox\"},\"attachments\":[{\"usageType\":\"http://example.com/attachment-usage/test\",\"display\":{\"en-US\":\"A test attachment\"},\"contentType\":\"image/png\",\"length\":7356,\"sha2\":\"dd230a0934684047ed4e5f7b0d47e2167c1aa8ff371a6e31a945db9fe0c5ba39\",\"description\":{\"en-US\":\"A test attachment (description)\"}}]}\n--7da24f2e50046\nContent-Type:image/png\nContent-Transfer-Encoding:binary\nX-Experience-API-Hash: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\n--7da24f2e50046"
+		},
+		{
+			"id": "d26eb8a8-8214-8f65-5f2f-e7a5c115f4c0",
+			"headers": "Origin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nX-Experience-API-Version: 1.0.1\nAccept: */*\nConnection: keep-alive\nDNT: 1\nContent-Type: multipart/mixed; boundary=7da24f2e50046\nAuthorization: Basic dGVzdDp0ZXN0\n",
+			"url": "{{endpoint}}/statements",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033335660,
+			"name": "Multipart UTF-8 (ZIP)",
+			"description": "POST 10 statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+			"rawModeData": "--7da24f2e50046\nContent-Type:application/json\n\n{\"actor\":{\"objectType\":\"Agent\",\"mbox\":\"mailto:steve.vergenz.ctr@adlnet.gov\"},\"verb\":{\"id\":\"http://adlnet.gov/expapi/verbs/launched\"},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://vwf.adlnet.gov/xapi/virtual_world_sandbox\"},\"attachments\":[{\"usageType\":\"http://example.com/attachment-usage/test\",\"display\":{\"en-US\":\"A test attachment\"},\"contentType\":\"image/png\",\"length\":7356,\"sha2\":\"dd230a0934684047ed4e5f7b0d47e2167c1aa8ff371a6e31a945db9fe0c5ba39\",\"description\":{\"en-US\":\"A test attachment (description)\"}}]}\n--7da24f2e50046\nContent-Type:application/zip\nContent-Transfer-Encoding:binary\nX-Experience-API-Hash:dd230a0934684047ed4e5f7b0d47e2167c1aa8ff371a6e31a945db9fe0c5ba39\n\nPK\u0004\u0014��\b�¨ZEka\u000f=»\u0012��%\u0013��    ���image.jpg\u0017w8ÜYð·kÕ(]h\u0015\u0016Kô\u001eqj\"Dì\u0013\u001cA¢°ÈE/ÑkÔè-VE¢Õ{/Ñ\u0012\u0016\u000e¹s{wß}Wÿ¹÷Þ÷Þ÷fÞÌ7ß¼·\u0017K�ô¦&�\u0001�ÀÅ<\u0010PSPÂ L0\u0018©ÁI\b}ÃÊ\n±4²ÀI;¬<¬ìH\u000e\u0018\fq\u0015\u0014\u0012F£ÑßpKÊIÈ\n¢A444ôtô¡ÐË\"üÜü\"\"b\"\"R\"ÿ.Ú�F*`\nX$ñ`F\u0010\u0019#è¢\u0013¸Lz#9é¥\u0001\u0010\u0018BNAFI\"*B\u0001\u0010\u0019\f\f¡üFºI\u0006!G\\eºn`éFÁÌ\u001b÷8v qç\u0013lRíþ#8\u000b\u001fÿ·A\u0004Òe6\u0012W²p&ÉI$\u0001F�ü+ d ?H$¾\b\bÓÕë\u0006Ì0^  rK·À9ì7yÀ5à\u00146¹\u0016NR\u0007\u0012PPªd^\fL¥ .RFP \n\u000b\f4ÁjËC\n»ôþ\u001a\u0018Îc/¦ÏD$1dÎ~Lþîs\u001b§Û3©Ñ\u0017ñ´7iD¨©1ñ¼\bÔª»©øÃÒ\b\u001d¤c2Ë\"_x6\\°¬öà¡Ze[¬oyJ25´\\#\u0001¥\u000eFÄ&ÈKHíäß:¿Ðíà\bL�RÕ·íãn÷¬ÈRMí¶v\u000eZþ ÏrH X« »»èè,&º3x\u0007\u001bZ·å§ÅG40¨¿\u001c®òøl;±pp³÷àZFª0ßÓ1ö¢\u0017vwé>Fí³Ë'\u000f­ÎÞK·8¾öl¬Ó®ÞþèU\u001côÍk«ótåÕs:\u0010fºÊüj\u000f`R¾cÐ¥#ïÆµAõ]\u0018ðë\u00168N½¥8q¶ÜußéS®é\u0012bÊÃ÷ð\u0013»V+ÜãqÕÒ\u000bS\u0013»}7òfûEÑNæñ Mù\u001b²sÛÂãR\u001dóàã¯à°\u0011ÇmV>N\u0016ÇRÀ#ìúÁËITØ$  ¥A ã©uËð\u001c<ïÅÃ©Ô¦ïsð«¢ !`XÄ\u001d\u001e \u0004©ÊA�\b*U®»:mmFõ¾#Þ\nrbmK×Í}ã¤WÞ¸UK\u0005f7µ\u0013\u0007îÕLý,c~¿Ï(UÔG;È{s]á§\u0007\u0015á êzË\u001fívvA\n¾ãFÏ^DF(D8\u001aNËÖ\u0010)?\u000bF2I«|Ç\u001dà3]îÖYã;\nê\u001fº»h\u001b¬×üTÎù »5PòÍ§A\u0016+$ûF`\be»ª÷¸a\u0014Ý]SzË\u0010}66__Ìt_\u000bsyé.\u0011ÏwT~^öé\u000e¯ì_ë%å0ÙFÚ+ÆÀjÏw'ÂsN\nû'4ì\bÂ(\u0006\"å²x\u001fOzÐî+Ö[Ü\u000b?+ô\b7\u0015ñÚ¿º[Ú(A¨m|Fsg;Íe\u000b2lr$<åÉï?¨óùÒXäû.,Ëã÷½7\u000e_©©BJXj5\u0004\u0015J\n\u0004\nÁCÔ0<¤)S¡\u001aHØÖèáå¦]\bs=MEK�}\u0018¯L]ý\u0006'\nçü·êÙ>\u0006un\u0006{UQà¢<7ó\u0016}z5bjÊz£VõËW¶Î\u001f^æ.½«3Øò\u0016)7º\u001e\\3\u001aäVJñªÅÑiÎøT£Ä§³Òy¤ú¢û\u0014M\\/)Ïîà¦°ônuUVÑÜ   3A³'C\u0005LëýoèÞ\\±øÞEchh¼85aÇÈv\u000f.æ¥ÏÙi¹ñó3Ó1\u000ej.K\u001bÛÙ\u001d¥õ$ æ\u0016ÎýåH­ã²¿úó\u001f\u0013ù,[ä7ªL¿X?uz¥:®Ù\u0017szÉìâ<¦Û± «øä\u001eù0_¶ÁFµ·ðó/qô¾ò\u0015hú9ù,ÍÇ¢«':Iæ#·;¯Sü�çª`.FÂ±¯l\u001a½\u00189d,m:º\u0012\u0004ëûcªSmM¤[\u0012  aI²Ò5¨(ÂÎAbqI\u000f¬{­ÿP\\\nZ%HòÝx*5(\u0018\u001a �þ\u001bñ¹(hÆ½ê\u001cBA%Þ®?sl]´\u000bMÐmÇXe\u001f]j1>½b+¦YÎ\u0016|ë\u0004ñnÀSºÏ{OÙb!V\u001fÿc+³dì2fÏÜÁ T¨¥kÚ¡1TÃm6\u0017À\u0019Gæ\u0015jÈxßÃo\"íì-¤9v©(ý\u000f\u001aÇÚj8çã$O*5Õñ¦¦f\u0015É¡+æàí \u0006ê¬G\u0006{bsú_\u001d~ ³p/Ú¡%@\u0012Ø6¤ß\u0013µJûo]væ¢\u0004ÜU¾±KÒó!å\u001d\u001bÔ.\u0017(ÏQF\u0005Íá uò± ìûòpbK¦óYB5î  \u001bÁ­mÝYíd×öçÙ%g{{3k%h¢CÝ0¬ Mëî©»?_Ý/\u0005¹Ú ó®è\u0012ïø\u0018\u001b+\u0005ßâ·\u001d\u0015ú²~\u0015³qÅ¥3\u0016°[ÆtÕ´\u001e¦]òÖÃ79pKcK)¾SâØH'¶Ì\u0016o­ÒÎÌ&E\u0010¼\u0019G\u00104\u0007\u001aÂùÍÇ\u0001íd^@\n\u001aÀloY`ú\u0006¼â0%¼ùÔô\bît\u0005´ÂôâÍª²ßî\\>9s÷\u001bz#èÛG/_¼\nøæI%ûø¼Óh»¾¶G9Þóo§¾´$\u000fõïÂ¦\u0016ÈnêùêO=dý¶\fª#\nÊ\u0005ûÈ3½ºoZá,f6dK;B\"äÑ_òw¾dþyX3ÍcdÌK¯«µ/d�«\u001d¬^ÛØRl8TöFóçc2ühm.µª»÷Ù¹Þ3\u000bÌÏÙ`7.1É\\¬wÓÐv'D¨=ÕA~x}:ÂVe\n¯\u0006\u000b ©ô§¤\u0005\u0013¬,Æ¸}C/âF¯6ö\u0014T)2·G>\fÎïIE~`iUlm<qå\u0016Æ~OÜ#pÏ_%ò^´ ,Ö=@¾Y\u0005\u0010nj~vJ6\u0016`½rÌé­\n98KfÏÃÉ)>°ºÆ\u0018 `}tçãØ2COÀíá\u0016^\fÅ«ò×ÕóËõH·Û\u001c\u001aÙV»>c¾ÎéO<7èì\u000e;ó4Z\u0001l_m\u0014Æì dëf\u001c\u0015l6¡ó»7VO9\u0013=ÒFâQ/öJñ·÷'5-o6TrÏPsë   KM`ãD-Ñ\u000fÜ\u0007RgÕ_¤w\u000fÁC{Ý;\\\bqj²à\u0010\u001c¹Kuc@­uóÜ]JâQA[1epl­:w4â\u000f@í§á\u0013îÇ½\\D}\u0007R6®Bõ\u001fæ9\u00045aHòËY#1\u000fr0fiÉO¨OááÑ©ìñÍ?Iö°#¥ÇðØÚÀD*®-ñØºª6ÏA´õÄH\u000få:ãô<ß`ôØc-wþÌ\u0011\u001eXª!#èO~j!æ\f×³á[5u»°ý\\NÃÌ½Å6²R9ý§ ðQ´Q\u0012ÅèÛèØ³úÀÎí*N\nxõ'FÔÉküØZ[\u0015D¦{ðh\bÑyè½Õ^ù]>Qî¥$Ôz\u001aîÌon;;.móh~Õ[©UÎ)�²¾F&\u0015\u000fófÖmÄj7u(ø¼NÍ:\fåúê¿«üÝ\u0010iÿ2öÂGO©3ËÄ\u0014dõ$ÙQgc)EØ\n\u0005\u0019{Ðr5§WéEO9ceL\u0015\u001d7­C±³Ò\u0017@!Û\u0005 =²nâµ\u001c¬L4øþ$6Ís°¾~k®\u0018>Ù8%iïåÆ+Ñ7øõý\u0019àÇQ\u001fÂéc®´?o¾åçßdÝc#5üaÙà\u001dën\u0006§|Ó¬¥6HùZòlr�í\u0016ç\u0006Î`Ë\b¦D´ò÷ïò$N¤s}ßNDÏVKi¿\bÞ\u001aöõ;(\u0018+×lZÊnMG\u001bÏì»¬<Ù\nÎc\u0005©8ö\u0007ªÆYÙMÎïz]\u000f%ªSê\u000bÞ]�ÀÁºk¸6¡@¢a\u000fo½^QÁëËQ5®LöØ­!\bFIü\u0019¥Ñ¸\u001b[\u0005Æ~\u000f\u001aH¦\b÷x³m¹ \u0019ÇÐ '²ßb\\\u0019\u0013Õf=K\u0004éÍ\u001cõi[0Õ\u001bÔÞ]×-ì\u0014?Åförõ>\u001b\u0014ÛÄØRxfë¤ý¤Rfg\u001bfªd'ñööþtE\u0019Ñ!{£\u0011èy/;¢¶27�\u0014<eûÉÁ$\u000e\"½\u0006\u0015 .w(³`dhÙ(Ý\nÕ3<(\u001dÎ\nÏÁÔq-iêçâeê$2F+    gèó¤\u0016hæÖ.a¹´÷þk4NK    Ñ3î~¾Qû6¸!æ=6¡t7Ñ3i\u0016¥2°À\"E/_aÎ¡RüÙ8k~¥0bÅWâçí}ª.Å^bO+ó<ì\u0015RÎ¸ûÚ¶Çèm\u0016ú\u000f½ãàç-JÎ+qö£\b*³Ì hP�4Í¾Ö«¤uRöávþÔ0Þ´\u0015ï²ç×þøáávVüöpïí¬HÃËã¯¡vcîÇ|¸\u001f×\u000f´K?c?\u0016ö\u001ap\\ùa(\u0015ùYê~¹&û³KMæ4!'=Ò]Ã?ôë¯¤+MP§-ÄÚ¥LéùÈº+\u0019ÒNEf÷/\u0016ë\u0016w½½ÚMSV1gTÍiúy1÷ÈÄ!J õ\u0018P+ã\u0014hüVk\u0013ùü]¥¢¦B¥ÊnËkí\u0004nù/íûf»>\u0018Þx)=¤wRU\u0007ÕSaïúXzÞdÈ¢øD=Ãq©¤®±Ã·\u0015!1D>cÙÕ®pFn?.è`uÙÖì°XN\u0010)#Õs¯ÿy\u0015¾KÁ:¡« \u0016-SÔP\u001a¡émòµ=h\u0016mRcØÔ î¾½\"té\n·ë·µ<~öpI±/ÊúT\u000f\u0004bA·°/H\n¯[´~¯äØÚDòÄ�Sg»TÚTkAû)¦,EIïÐ&\"@Æ¼Þb¹êz5è¿m«rSª~Æcèö:ÖDéçþã=Ï7\u001dë(%°ªIÅ3×R>M)\u000fjî   Ådý\bT\u0019ú¬÷¤Qi6uX!ø\u0018\u0019.ýH[ª÷h/ì\b¿�\f¾G:}åiEñëþ8v·3¬Ý©«\u000eÞr\u0013ÄÒUK\u0019n\u0010\u001c V¥>MïþL\"òµäÕÞ\u0007¾àÂNáëÃz4A¯  Ó\u001fu\u0001ÊECÙþ;²'§ó×Êü\"-}6\u0007Ö\u001fÏ»ÅÓOD×[OÐML+\u0015G\u0018³Ô«º=ÏBv2isH\u001fæññ=~?ù4Ü«½ªµ3ãËw\u0019q¯±ï\u000bìó \f¡Ã{Ä¤µ:o2\u001b¦u¹,¬\u0015ÉðhÉ3sEGÞ5ÈË\u0007=RÔ'QóFKðÐßÌóa¢\b4Øiß\nLùrªîÿ\u0001eÿÚÉ¡ðSz[î¨\u0016¥VnNþhôàô¼êÔ]¬­¯,¨²ï°ÏÂñ*±&£&}[¦`©Bå \u0019\u0019Í°[z7ñkÆZLÛ]Fºø\u0013GÐ\u00125Û\u0013³=S%Uçó¾ë\u001dûzr~Î<å\u0004\u0019õãr¡:\nÃ×u±á·JE·Ê¿©ûQ+æÙ©E\bÂÓ\u0014_¨\u0005J\u0010\u0013½L\u000f¬:&\b¼;pÓv \u0017:C B~ïP\u0005¬%µ\u00124Sû\u001c,þµX:¾ë$Ø\u0017<ÒëRÁîýÁ³FØg0Â3Ç&´U±Gs÷2Kå*étâ,u\u000fYø¥¶<ùÆ ¢ÝzUa\u0004±SÝ.*99a®c\u0016Y WDtògsHÿ¿z¥Ï¾RQRWÉ\u000byùJãtX\n¡RGÄªM)Ü\u0018æ:ßÑ²:ätc,ôCF³Äp\u0005*&sªóìÅ¾¿6£UUÇÒ«\u0019Xæ¥¨8N\u001fÑ\n\u0017ÎkPì¸\u0015¯§ß'<Ói2T~$oSNÏ\u0001²rïùö\\(5ÍM²Ïù\u001crWyÃä«\u001cÃ³Äö\fÝ\u001f\u000bó§øÄæ¢^UA  ò/ºlñ¾pbû¡îGÊîÍ\u000b\u0019¾Å6Ù¡ø\u000f\u0017@Ø>Ý4à@N`Ypiöx|d$dg\u0006qwÝ½'\"³\u0015iØ¼Vv\u0001¬E¥Ú¼7;\u0013þh\n®c×jÆÉ¶õËùl7¤°aSDÆ\u000e\u001e¸Tñ°¦_YÔ$ë9÷S­ÉÚ\u0017\u0019½\u00109üCi6@tLôÜÇô*&(ùÉ&¶HéAÚ^QûO\u000bì?\n>¹K{UYÊ¼(Ðôy­É¦Ûñ½ú    ÜT¶�êHªPmþÌ3ÔÒ6*#¨nßàä\\Ç#vé9¨­MßÅ\u0018È<dxètx\u0001¼.´P=jK´peÒ9Ò/z:þðC~÷VZmÆE¡R¯\u0013qê'6\u000f=ßÏ)3.\u0015§ÐS·.@[] s?.ÇÆ´%+6Ps«CÕVù\u0015Q!_$1\u000bß;¯PÑóÄã½x¼=ÆWñ\u0007ivÜ.Ý\bxyN#býeö\u0019é*üè®;å¸Z¥õPcÿ=Îs÷ì\u0007JP«ß/iÀWÛ>I\n\u001e(`u\\D\u0017,õÞnFà´z¾ÑÌ|\u000e®-\b5tùRæ¶äê}¦WÓÀ�×»>ZKWçB>õÊi©jÛà-qáäñ~·Ýµ\u000fÉ\u0014©ý±ÝO>]ÛQñß0Ï\u001e\u0010(í¶ÇfÛù¤q(+»r|\fã\u0006¹8:5½ \u0018ìáQùÆ©\u000fÖ\fï¿EJéÇzÿö3\u0016¼ÐPÀº(JM\u0005ÒÞ�Æ;\u0017\u0010@\bd{­Zt\fé0ª¯Â_óÙ_�PK\u0004\n����ÕZEµé'è\n���\n���\f���textFile.txtHello LRS!PK\u0001?\u0014��\b�¨ZEka\u000f=»\u0012��%\u0013��  ���������!4����image.jpgPK\u0001?\n����ÕZEµé'è\n���\n���\f���������!4â\u0012��textFile.txtPK\u0005\u0006������q���\u0016\u0013����\n--7da24f2e50046"
+		},
+		{
+			"id": "d7a4ba6f-b105-a170-2ed3-fd144379599e",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nOrigin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.1\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
+			"url": "{{endpoint}}/statements?statementId={{randomStatementId}}",
+			"preRequestScript": "function uuid() {\n  function s4() {\n    return Math.floor((1 + Math.random()) * 0x10000)\n      .toString(16)\n      .substring(1);\n  }\n  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +\n    s4() + '-' + s4() + s4() + s4();\n}\n\npostman.setEnvironmentVariable(\"randomStatementId\", uuid());",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 204\"] = responseCode.code === 204;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033367076,
+			"name": "PUT single statement",
+			"description": "POST 10 statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+			"rawModeData": "{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Harpo Marx\",\"mbox\":\"mailto:harpo@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #0\"}}"
+		},
+		{
+			"id": "df9e8d39-8203-d624-ff3c-4eb17c469fba",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nOrigin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.1\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
+			"url": "{{endpoint}}/agents/profile?agent={\"objectType\":\"Agent\",\"name\":\"Buster Keaton\",\"mbox\":\"mailto:buster@keaton.com\"}&profileId={{randomProfileId}}",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1440033362082,
+			"name": "Agent profile GET",
+			"description": "POST 10 statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67"
+		}
+	]
+}
