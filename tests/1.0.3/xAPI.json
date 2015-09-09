@@ -16,7 +16,11 @@
 		"df9e8d39-8203-d624-ff3c-4eb17c469fba",
 		"d7a4ba6f-b105-a170-2ed3-fd144379599e",
 		"28c5a908-dca7-a842-9510-9b2a510ed2b4",
-		"9dfce8a7-cd38-be11-89c3-b814b67e10c8"
+		"9dfce8a7-cd38-be11-89c3-b814b67e10c8",
+		"d3602701-4295-64c1-233f-7aca087e3bec",
+		"d9a2ddcd-97f5-864b-6008-986260878dee",
+		"64c4ec70-53d8-57dc-ff99-c1e94e6f430b",
+		"85756ce0-2cf7-fa16-85d2-3109acaf1aaf"
 	],
 	"folders": [],
 	"timestamp": 0,
@@ -383,6 +387,101 @@
 			"time": 1440033362082,
 			"name": "Agent profile GET",
 			"description": "POST 10 statements",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67"
+		},
+		{
+			"id": "d3602701-4295-64c1-233f-7aca087e3bec",
+			"headers": "Origin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.1\nAccept: */*\nConnection: keep-alive\nDNT: 1\nAuthorization: Basic dGVzdDp0ZXN0\n",
+			"url": "{{endpoint}}/statements",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\n\nvar counter = 0;\nvar data = JSON.parse(responseBody);\nvar pattern = new RegExp(\"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$\");\ndata.forEach(function(uuid) {\n   var result = pattern.test(uuid);\n   if (result) {\n       counter++;\n   }\n   postman.setEnvironmentVariable(\"statementCId\", uuid);\n});\n\ntests[\"Body contains an UUID\"] = counter === 1;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1441841379193,
+			"name": "Statement C of A->B->C relation",
+			"description": "POST C statement",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+			"rawModeData": "{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Harpo Marx\",\"mbox\":\"mailto:harpo@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/StatementRefTest2\",\"definition\":{\"name\":{\"en-US\":\"Statement Reference test\"}}},\"result\":{\"response\":\"Complaint #0\"}}"
+		},
+		{
+			"id": "d9a2ddcd-97f5-864b-6008-986260878dee",
+			"headers": "Origin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.1\nAccept: */*\nConnection: keep-alive\nDNT: 1\nAuthorization: Basic dGVzdDp0ZXN0\n",
+			"url": "{{endpoint}}/statements",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\n\nvar counter = 0;\nvar data = JSON.parse(responseBody);\nvar pattern = new RegExp(\"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$\");\ndata.forEach(function(uuid) {\n   var result = pattern.test(uuid);\n   if (result) {\n       counter++;\n   }\n   postman.setEnvironmentVariable(\"statementBId\", uuid);\n});\n\ntests[\"Body contains an UUID\"] = counter === 1;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1441840293155,
+			"name": "Statement B of A->B->C relation",
+			"description": "POST B statement",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+			"rawModeData": "{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Buster Keaton\",\"mbox\":\"mailto:buster@keaton.com\"},\"verb\":{\"id\":\"http://adlnet.gov/expapi/verbs/random\",\"display\":{\"en-US\":\"random\"}},\"object\":{\"objectType\":\"StatementRef\",\"id\":\"{{statementCId}}\"}}"
+		},
+		{
+			"id": "64c4ec70-53d8-57dc-ff99-c1e94e6f430b",
+			"headers": "Origin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.1\nAccept: */*\nConnection: keep-alive\nDNT: 1\nAuthorization: Basic dGVzdDp0ZXN0\n",
+			"url": "{{endpoint}}/statements",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\n\nvar counter = 0;\nvar data = JSON.parse(responseBody);\nvar pattern = new RegExp(\"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$\");\ndata.forEach(function(uuid) {\n   var result = pattern.test(uuid);\n   if (result) {\n       counter++;\n   }\n   postman.setEnvironmentVariable(\"statementAId\", uuid);\n});\n\ntests[\"Body contains an UUID\"] = counter === 1;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1441840391067,
+			"name": "Statement A of A->B->C relation",
+			"description": "POST A statement",
+			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
+			"rawModeData": "{\"actor\":{\"objectType\":\"Agent\",\"name\":\"Buster Keaton\",\"mbox\":\"mailto:buster@keaton.com\"},\"verb\":{\"id\":\"http://adlnet.gov/expapi/verbs/random\",\"display\":{\"en-US\":\"random\"}},\"object\":{\"objectType\":\"StatementRef\",\"id\":\"{{statementBId}}\"}}"
+		},
+		{
+			"id": "85756ce0-2cf7-fa16-85d2-3109acaf1aaf",
+			"headers": "Origin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.2\nAccept: */*\nConnection: keep-alive\nDNT: 1\nAuthorization: Basic dGVzdDp0ZXN0\n",
+			"url": "{{endpoint}}/statements?activity=http://xapi.brightcookie.com/activities/StatementRefTest2",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;\n\nvar data = JSON.parse(responseBody);\ntests[\"3 statements returned\"] = data.statements.length === 3;",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "{{user}}",
+				"password": "{{pw}}",
+				"id": "basic",
+				"timestamp": 1440015496056
+			},
+			"time": 1441841745513,
+			"name": "StatementsRef fetch",
+			"description": "GET statementRefs",
 			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67"
 		}
 	]
