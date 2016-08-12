@@ -77,7 +77,7 @@
 		},
 		{
 			"id": "28c5a908-dca7-a842-9510-9b2a510ed2b4",
-			"headers": "Authorization: Basic dGVzdDp0ZXN0\nOrigin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.3\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nOrigin: null\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nContent-Type: application/json\nX-Experience-API-Version: 1.0.2\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
 			"url": "{{endpoint}}/auth/tokens",
 			"preRequestScript": "",
 			"pathVariables": {},
@@ -172,7 +172,7 @@
 		},
 		{
 			"id": "9dfce8a7-cd38-be11-89c3-b814b67e10c8",
-			"headers": "Authorization: Basic dGVzdDp0ZXN0\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nX-Experience-API-Version: 1.0.3\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
+			"headers": "Authorization: Basic dGVzdDp0ZXN0\nAccept-Encoding: gzip, deflate\nAccept-Language: sl-SI,sl;q=0.8,en-GB;q=0.6,en;q=0.4\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.62 Safari/537.36\nX-Experience-API-Version: 1.0.2\nAccept: */*\nConnection: keep-alive\nDNT: 1\n",
 			"url": "{{endpoint}}/oauth/token",
 			"preRequestScript": "",
 			"pathVariables": {},
