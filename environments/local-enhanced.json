@@ -1,0 +1,30 @@
+{
+	"id": "e87d4970-6e16-65a8-bc79-2df5f1206864",
+	"name": "Local",
+	"values": [
+		{
+			"key": "user",
+			"value": "test",
+			"type": "text",
+			"name": "user",
+			"enabled": true
+		},
+		{
+			"key": "pw",
+			"value": "Test123!",
+			"type": "text",
+			"name": "pw",
+			"enabled": true
+		},
+		{
+			"key": "endpoint",
+			"value": "http://localhost:8080",
+			"type": "text",
+			"name": "endpoint",
+			"enabled": true
+		}
+	],
+	"timestamp": 1440070749795,
+	"synced": false,
+	"syncedFilename": ""
+}
