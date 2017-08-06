@@ -145,7 +145,7 @@
 			"name": "CORS",
 			"description": "POST 10 statements",
 			"collectionId": "ea8fe67c-31cf-405b-96ce-32380d8d6e67",
-			"rawModeData": "statementId={{randomStatementId}}&content={\"actor\":{\"objectType\":\"Agent\",\"name\":\"Harpo Marx\",\"mbox\":\"mailto:harpo@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #0\"}}&registration=&Content-Type=application/json&Authorization=Basic dG9tOjEyMzQ="
+			"rawModeData": "statementId={{randomStatementId}}&content={\"actor\":{\"objectType\":\"Agent\",\"name\":\"Harpo Marx\",\"mbox\":\"mailto:harpo@marxbrothers.com\"},\"verb\":{\"id\":\"http://xapi.brightcookie.com/verbs/attempted\",\"display\":{\"en-US\":\"Attempted\"}},\"object\":{\"objectType\":\"Activity\",\"id\":\"http://xapi.brightcookie.com/activities/PieFight\",\"definition\":{\"name\":{\"en-US\":\"Pie Fight\"}}},\"result\":{\"response\":\"Complaint #0\"}}&registration=&Content-Type=application/json&Authorization=Basic dGVzdDp0ZXN0"
 		},
 		{
 			"id": "8826164d-c88b-33dc-a7b4-559c9f2b3e07",
